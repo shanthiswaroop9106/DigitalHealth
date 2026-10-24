@@ -1,0 +1,93 @@
+Implement a Blood Sugar Level Interpretation and Patient Education feature in my existing HealthSync website.
+
+IMPORTANT: Do not redesign the existing UI/UX. Integrate this feature into the existing health reports or health assessment section.
+
+FEATURE REQUIREMENTS:
+
+1. Allow patients to enter their blood sugar test results:
+   
+   - Fasting Blood Glucose (mg/dL)
+   - 2-hour Oral Glucose Tolerance Test (OGTT) value (mg/dL), if available
+   - HbA1c (%)
+   - Test date
+
+2. Allow patients to upload their blood test reports and, if possible, extract the test values for review. Always allow manual correction before interpretation.
+
+3. Interpret the values using these standard adult non-pregnancy diagnostic reference ranges:
+
+FASTING BLOOD GLUCOSE:
+
+- Below 100 mg/dL: Normal range
+- 100–125 mg/dL: Prediabetes range
+- 126 mg/dL or above: Diabetes range
+
+HbA1c:
+
+- Below 5.7%: Normal range
+- 5.7%–6.4%: Prediabetes range
+- 6.5% or above: Diabetes range
+
+2-HOUR 75 g OGTT:
+
+- Below 140 mg/dL: Normal range
+- 140–199 mg/dL: Prediabetes range
+- 200 mg/dL or above: Diabetes range
+
+IMPORTANT MEDICAL ACCURACY:
+
+- Do not treat an ordinary 2-hour after-meal glucose reading as equivalent to a 2-hour OGTT result.
+- Clearly distinguish OGTT results from routine post-meal readings.
+- These ranges are for non-pregnant adults. Pregnancy requires different criteria.
+- A single abnormal result does not automatically confirm diabetes. Explain that diagnosis generally requires confirmation with appropriate repeat or additional laboratory testing unless clear clinical criteria apply.
+- Do not diagnose patients or replace a doctor's assessment.
+
+4. Display the interpretation clearly:
+   
+   - Normal range
+   - Prediabetes range
+   - Diabetes range
+   - Needs medical confirmation, where appropriate
+
+5. Give simple patient-friendly explanations:
+   
+   - What does this result mean?
+   - Why is this value important?
+   - What should the patient do next?
+   - When should the patient consult a doctor?
+
+6. If results are in the prediabetes range:
+   
+   - Explain that blood sugar is higher than normal but not in the diabetes range.
+   - Educate about balanced food, regular physical activity and maintaining a healthy weight.
+   - Recommend discussing follow-up testing and prevention with a healthcare professional.
+
+7. If results are in the diabetes range:
+   
+   - Clearly advise the patient to consult a qualified doctor for confirmation and further evaluation.
+   - Explain the importance of medical follow-up.
+   - Do not prescribe medicines or change existing medication.
+   - Do not create unnecessary fear.
+
+8. If values are significantly abnormal or the patient reports serious symptoms such as vomiting, confusion, difficulty breathing or severe weakness, provide appropriate urgent medical-care guidance instead of routine lifestyle advice.
+
+9. Use simple English, Telugu and Hindi according to the user's selected website language.
+
+10. Display a visual result card with:
+
+- Entered test value
+- Reference range
+- Interpretation
+- Patient education
+- Recommended next step
+
+11. Save test results and interpretations in the existing SQLite database, linked to the logged-in user's account.
+
+12. Show previous reports and allow patients to compare older and newer results with test dates. Do not compare different test types as if they were equivalent.
+
+13. Use the existing Flask backend and frontend. Do not create duplicate pages, databases or unnecessary files.
+
+14. Test normal, prediabetes, diabetes-range, missing-value and invalid-value scenarios.
+
+The main objective is to help patients understand their blood sugar reports in simple language, recognize when medical consultation is needed, and make informed decisions without presenting the website as a diagnostic replacement for a doctor.
+
+Inspect the existing project first and implement this feature without breaking existing HealthSync functionality.

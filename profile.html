@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | HealthSync</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">H</span>
+          <span data-i18n="brand">HealthSync</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+
+        <nav class="main-nav">
+          <a href="index.html" data-i18n="navHome">Home</a>
+          <a href="dashboard.html" data-i18n="navDashboard">Dashboard</a>
+          <a href="diet.html" data-i18n="navDiet">Diet</a>
+          <a href="activities.html" data-i18n="navActivities">Activities</a>
+          <a href="progress.html" data-i18n="navProgress">Progress</a>
+          <a href="ai.html" data-i18n="navAssistant">AI Assistant</a>
+          <a class="active" href="profile.html" data-i18n="navProfile">Profile</a>
+        </nav>
+
+        <div class="nav-actions">
+          <label class="language-picker">
+            <span>🌐</span>
+            <select data-language aria-label="Select language">
+              <option value="en">English</option>
+              <option value="te">తెలుగు</option>
+              <option value="hi">हिन्दी</option>
+            </select>
+          </label>
+          <a class="btn btn-outline" href="login.html" data-i18n="navLogin">Login</a>
+          <a class="btn btn-primary" href="signup.html" data-i18n="navSignup">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Account</span>
+          <h2 data-i18n="profileTitle">Profile & settings</h2>
+        </div>
+
+        <div class="settings-grid">
+          <section class="setting-card personal-details-card">
+            <div>
+              <h3 data-i18n="personalDetails">Personal details</h3>
+              <p id="profileSummary" aria-live="polite"></p>
+            </div>
+            <button id="editProfileBtn" class="btn btn-ghost" type="button" data-i18n="edit">Edit</button>
+          </section>
+
+          <section id="profileEditor" class="setting-card profile-editor" hidden>
+            <form id="profileForm">
+              <h3 data-i18n="editPersonalDetails">Edit personal details</h3>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="profile-first-name" data-i18n="firstName">First name</label>
+                  <input id="profile-first-name" name="firstName" type="text" required autocomplete="given-name" />
+                </div>
+                <div class="field">
+                  <label for="profile-last-name" data-i18n="lastName">Last name</label>
+                  <input id="profile-last-name" name="lastName" type="text" autocomplete="family-name" />
+                </div>
+                <div class="field">
+                  <label for="profile-email" data-i18n="email">Email</label>
+                  <input id="profile-email" name="email" type="email" required autocomplete="email" />
+                </div>
+                <div class="field">
+                  <label for="profile-age" data-i18n="age">Age</label>
+                  <input id="profile-age" name="age" type="number" min="1" max="120" />
+                </div>
+                <div class="field">
+                  <label for="profile-gender" data-i18n="gender">Gender</label>
+                  <select id="profile-gender" name="gender">
+                    <option value="" data-i18n="selectOption">Select</option>
+                    <option value="Male" data-i18n="male">Male</option>
+                    <option value="Female" data-i18n="female">Female</option>
+                    <option value="Other" data-i18n="other">Other</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="profile-diabetes" data-i18n="diabetesCategory">Diabetes category</label>
+                  <select id="profile-diabetes" name="diabetesCategory">
+                    <option value="" data-i18n="selectOption">Select</option>
+                    <option value="Type 1" data-i18n="type1">Type 1</option>
+                    <option value="Type 2" data-i18n="type2">Type 2</option>
+                    <option value="Prediabetes" data-i18n="prediabetes">Prediabetes</option>
+                    <option value="Gestational" data-i18n="gestational">Gestational</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="profile-height" data-i18n="heightCm">Height (cm)</label>
+                  <input id="profile-height" name="height" type="number" min="30" max="300" step="0.1" />
+                </div>
+                <div class="field">
+                  <label for="profile-weight" data-i18n="weightKg">Weight (kg)</label>
+                  <input id="profile-weight" name="weight" type="number" min="1" max="700" step="0.1" />
+                </div>
+                <div class="field">
+                  <label for="profile-activity" data-i18n="activityLevel">Activity level</label>
+                  <select id="profile-activity" name="activityLevel">
+                    <option value="" data-i18n="selectOption">Select</option>
+                    <option value="Low" data-i18n="low">Low</option>
+                    <option value="Moderate" data-i18n="moderate">Moderate</option>
+                    <option value="High" data-i18n="high">High</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="profile-lifestyle" data-i18n="lifestylePattern">Lifestyle pattern</label>
+                  <input id="profile-lifestyle" name="lifestyle" type="text" />
+                </div>
+                <div class="field">
+                  <label for="profile-food-preferences" data-i18n="foodPreferences">Food preferences</label>
+                  <input id="profile-food-preferences" name="foodPreferences" type="text" />
+                </div>
+                <div class="field">
+                  <label for="profile-health-conditions" data-i18n="healthConditions">Health conditions</label>
+                  <textarea id="profile-health-conditions" name="healthConditions" rows="2"></textarea>
+                </div>
+                <div class="field">
+                  <label for="profile-goals" data-i18n="lifestyleGoals">Lifestyle goals</label>
+                  <textarea id="profile-goals" name="goals" rows="2"></textarea>
+                </div>
+                <div class="field" style="grid-column: 1 / -1;">
+                  <label for="profile-notes" data-i18n="healthNotes">Health notes</label>
+                  <textarea id="profile-notes" name="notes" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="form-row">
+                <button id="cancelProfileEdit" class="btn btn-outline" type="button" data-i18n="cancel">Cancel</button>
+                <button class="btn btn-primary" type="submit" data-i18n="saveChanges">Save changes</button>
+              </div>
+              <div id="profileStatus" class="form-status" role="status" aria-live="polite"></div>
+            </form>
+          </section>
+
+          <section class="setting-card language-setting-card">
+            <div>
+              <h3 data-i18n="languageSettings">Language</h3>
+              <p data-i18n="languageDescription">Choose the language used throughout HealthSync.</p>
+            </div>
+            <label class="language-picker">
+              <span>🌐</span>
+              <select data-language aria-label="Select language">
+                <option value="en">English</option>
+                <option value="te">తెలుగు</option>
+                <option value="hi">हिन्दी</option>
+              </select>
+            </label>
+            <div id="languageStatus" class="form-status" role="status" aria-live="polite"></div>
+          </section>
+
+          <div class="setting-card">
+            <div>
+              <h3 data-i18n="reminders">Reminders</h3>
+              <p data-i18n="reminderDescription">Meal and activity alerts</p>
+            </div>
+            <button class="switch on" type="button" data-setting="reminders" aria-pressed="true" aria-label="Toggle reminders"></button>
+          </div>
+
+          <div class="setting-card">
+            <div>
+              <h3 data-i18n="notifications">Notifications</h3>
+              <p data-i18n="notificationDescription">Progress summaries and health check-ins</p>
+            </div>
+            <button class="switch on" type="button" data-setting="notifications" aria-pressed="true" aria-label="Toggle notifications"></button>
+          </div>
+
+          <div class="setting-card">
+            <div>
+              <h3 data-i18n="privateMode">Private mode</h3>
+              <p data-i18n="privateModeDescription">Hide extra health data in summaries</p>
+            </div>
+            <button class="switch" type="button" data-setting="privateMode" aria-pressed="false" aria-label="Toggle private mode"></button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div><strong>HealthSync</strong></div>
+        <p>© <span id="year"></span> HealthSync</p>
+      </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

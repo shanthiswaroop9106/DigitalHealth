@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | HealthSync</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">H</span>
+          <span data-i18n="brand">HealthSync</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+
+        <nav class="main-nav">
+          <a href="index.html" data-i18n="navHome">Home</a>
+          <a class="active" href="dashboard.html" data-i18n="navDashboard">Dashboard</a>
+          <a href="diet.html" data-i18n="navDiet">Diet</a>
+          <a href="activities.html" data-i18n="navActivities">Activities</a>
+          <a href="progress.html" data-i18n="navProgress">Progress</a>
+          <a href="ai.html" data-i18n="navAssistant">AI Assistant</a>
+          <a href="profile.html" data-i18n="navProfile">Profile</a>
+        </nav>
+
+        <div class="nav-actions">
+          <label class="language-picker">
+            <span>🌐</span>
+            <select data-language aria-label="Select language">
+              <option value="en">English</option>
+              <option value="te">తెలుగు</option>
+              <option value="hi">हिन्दी</option>
+            </select>
+          </label>
+          <a class="btn btn-outline" href="login.html" data-i18n="navLogin">Login</a>
+          <a class="btn btn-primary" href="signup.html" data-i18n="navSignup">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="dashboard-shell">
+      <div class="container dashboard-layout">
+        <aside class="sidebar">
+          <div class="profile-mini">
+            <div id="dashboardAvatar" class="avatar">?</div>
+            <div>
+              <strong id="dashboardUserName" data-i18n="loading">Loading…</strong>
+              <div id="dashboardUserDetails" style="color: var(--muted); font-size: 0.85rem;" data-i18n="healthProfile">Health profile</div>
+            </div>
+          </div>
+
+          <nav class="sidebar-nav">
+            <a class="active" href="dashboard.html">Overview <span>→</span></a>
+            <a href="medical.html" data-i18n="navMedical">Medical History <span>→</span></a>
+            <a href="diet.html">Diet plan <span>→</span></a>
+            <a href="activities.html">Activities <span>→</span></a>
+            <a href="progress.html">Progress <span>→</span></a>
+            <a href="ai.html">AI Assistant <span>→</span></a>
+            <a href="profile.html">Profile <span>→</span></a>
+          </nav>
+        </aside>
+
+        <section class="main-panel">
+          <div class="panel-header">
+            <div>
+              <span id="dashboardWelcome" class="kicker" data-i18n="welcome">Welcome</span>
+              <h2 data-i18n="dashboardTitle" style="margin-top: 18px;">Health overview</h2>
+            </div>
+            <span class="badge success">Low risk</span>
+          </div>
+
+          <div class="summary-grid">
+            <div class="metric-card">
+              <div class="metric-header">
+                <span data-i18n="Diabetes category">Diabetes category</span>
+                <span id="dashboardDiabetesBadge" class="badge success">—</span>
+              </div>
+              <p id="dashboardCategory" class="metric-value">—</p>
+              <div id="dashboardConditions" class="delta up">—</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-header">
+                <span>BMI</span>
+                <span id="dashboardBmiBadge" class="badge warning">—</span>
+              </div>
+              <p id="dashboardBmi" class="metric-value">—</p>
+              <div class="delta up" data-i18n="From your profile">From your profile</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-header">
+                <span>Meals</span>
+                <span id="dashboardMealsBadge" class="badge success">0/4</span>
+              </div>
+              <p id="dashboardMealsValue" class="metric-value" data-i18n="Not tracked yet">Not tracked yet</p>
+              <div id="dashboardMealsDelta" class="delta up">—</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-header">
+                <span>Steps</span>
+                <span id="dashboardStepsBadge" class="badge success">—</span>
+              </div>
+              <p id="dashboardStepsValue" class="metric-value">—</p>
+              <div id="dashboardStepsDelta" class="delta down" data-i18n="No step data recorded">No step data recorded</div>
+            </div>
+          </div>
+
+          <div class="card-grid">
+            <div class="panel-card medical-dashboard-link">
+              <h3 data-i18n="Medical History">Medical History</h3>
+              <p data-i18n="Keep your diagnosis, care, reports, and readings together.">Keep your diagnosis, care, reports, and readings together.</p>
+              <a class="btn btn-primary" href="medical.html" data-i18n="Open medical history">Open medical history</a>
+            </div>
+            <div class="panel-card">
+              <div class="panel-header">
+                <h3>Today’s diet</h3>
+                <span class="badge success">On track</span>
+              </div>
+              <ul class="list">
+                <li><div><strong>Breakfast</strong><small>Oatmeal, berries, yogurt</small></div><span>320 kcal</span></li>
+                <li><div><strong>Lunch</strong><small>Brown rice, grilled chicken, greens</small></div><span>560 kcal</span></li>
+                <li><div><strong>Dinner</strong><small>Salmon, quinoa, vegetables</small></div><span>470 kcal</span></li>
+              </ul>
+            </div>
+
+            <div class="panel-card">
+              <div class="panel-header">
+                <h3>Today’s activities</h3>
+                <span class="badge success">Goal 10k</span>
+              </div>
+              <ul class="list">
+                <li><div><strong>Walk</strong><small>Morning walk</small></div><span>4.5k steps</span></li>
+                <li><div><strong>Stretching</strong><small>Mobility routine</small></div><span>15 min</span></li>
+                <li><div><strong>Workout</strong><small>Strength training</small></div><span>25 min</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card-grid">
+            <div class="chart-card">
+              <div class="panel-header">
+                <h3>Progress</h3>
+                <span class="badge success">This week</span>
+              </div>
+
+              <div class="chart-block" aria-label="progress chart">
+                <div class="bar" style="height: 50%;"></div>
+                <div class="bar" style="height: 62%;"></div>
+                <div class="bar" style="height: 70%;"></div>
+                <div class="bar" style="height: 78%;"></div>
+                <div class="bar" style="height: 72%;"></div>
+                <div class="bar" style="height: 83%;"></div>
+                <div class="bar" style="height: 90%;"></div>
+              </div>
+            </div>
+
+            <div class="chart-card">
+              <div class="panel-header">
+                <h3>Health summary</h3>
+                <span class="badge success">Today</span>
+              </div>
+
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div>
+                    <strong>Blood sugar</strong>
+                    <p id="dashboardGlucoseSummary">—</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div>
+                    <strong>Hydration</strong>
+                    <p id="dashboardHydrationSummary">—</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div>
+                    <strong>Sleep</strong>
+                    <p id="dashboardSleepSummary">—</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div><strong>HealthSync</strong></div>
+        <p>© <span id="year"></span> HealthSync</p>
+      </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

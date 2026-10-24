@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Assistant | HealthSync</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">H</span>
+          <span data-i18n="brand">HealthSync</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+
+        <nav class="main-nav">
+          <a href="index.html" data-i18n="navHome">Home</a>
+          <a href="dashboard.html" data-i18n="navDashboard">Dashboard</a>
+          <a href="diet.html" data-i18n="navDiet">Diet</a>
+          <a href="activities.html" data-i18n="navActivities">Activities</a>
+          <a href="progress.html" data-i18n="navProgress">Progress</a>
+          <a class="active" href="ai.html" data-i18n="navAssistant">AI Assistant</a>
+          <a href="profile.html" data-i18n="navProfile">Profile</a>
+        </nav>
+
+        <div class="nav-actions">
+          <label class="language-picker">
+            <span>🌐</span>
+            <select data-language aria-label="Select language">
+              <option value="en">English</option>
+              <option value="te">తెలుగు</option>
+              <option value="hi">हिन्दी</option>
+            </select>
+          </label>
+          <a class="btn btn-outline" href="login.html" data-i18n="navLogin">Login</a>
+          <a class="btn btn-primary" href="signup.html" data-i18n="navSignup">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container chat-layout">
+        <div class="chat-card">
+          <div class="panel-header" style="margin-bottom: 18px;">
+            <div>
+              <span class="kicker">AI wellness coach</span>
+              <h2 style="margin-top: 16px;">HealthSync assistant</h2>
+            </div>
+            <span class="badge success">Online</span>
+          </div>
+
+          <div class="chat-box" id="chatMessages">
+            <div class="message bot" data-i18n="chatWelcome">Ask about your health routine, meals, activity, or progress.</div>
+          </div>
+
+          <div class="chat-input">
+            <input id="chatInput" type="text" placeholder="Ask about your day, goals, or nutrition..." />
+            <button id="sendChatBtn" class="btn btn-primary" type="button">Send</button>
+          </div>
+          <div id="chatStatus" class="form-status" aria-live="polite"></div>
+        </div>
+
+        <aside class="chat-card">
+          <div class="panel-header">
+            <h3>Quick actions</h3>
+          </div>
+          <div class="quick-actions">
+            <button class="quick-button" type="button" data-question="What are good meal suggestions for my diabetes-friendly routine today?">Meal suggestions <span>→</span></button>
+            <button class="quick-button" type="button" data-question="Can you suggest a safe activity plan based on my current health and activity level?">Activity plan <span>→</span></button>
+            <button class="quick-button" type="button" data-question="How can I manage stress and stay consistent with my diabetes care plan?">Stress support <span>→</span></button>
+            <button class="quick-button" type="button" data-question="Can you review my recent health progress and suggest what to focus on next?">Progress review <span>→</span></button>
+          </div>
+
+          <div class="history-panel">
+            <div class="history-header">
+              <h3>Chat history</h3>
+              <button id="newChatBtn" class="btn btn-ghost" type="button">New chat</button>
+            </div>
+            <div id="chatHistoryList" class="chat-history-list"></div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div><strong>HealthSync</strong></div>
+        <p>© <span id="year"></span> HealthSync</p>
+      </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

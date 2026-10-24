@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Manage your private medical history and reports in HealthSync." />
+    <title>Medical History | HealthSync</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">H</span>
+          <span data-i18n="brand">HealthSync</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+        <nav class="main-nav">
+          <a href="index.html" data-i18n="navHome">Home</a>
+          <a href="dashboard.html" data-i18n="navDashboard">Dashboard</a>
+          <a href="diet.html" data-i18n="navDiet">Diet</a>
+          <a href="activities.html" data-i18n="navActivities">Activities</a>
+          <a href="progress.html" data-i18n="navProgress">Progress</a>
+          <a href="ai.html" data-i18n="navAssistant">AI Assistant</a>
+          <a href="profile.html" data-i18n="navProfile">Profile</a>
+        </nav>
+        <div class="nav-actions">
+          <label class="language-picker">
+            <span aria-hidden="true">🌐</span>
+            <select data-language aria-label="Select language">
+              <option value="en">English</option>
+              <option value="te">తెలుగు</option>
+              <option value="hi">हिन्दी</option>
+            </select>
+          </label>
+          <a class="btn btn-outline" href="login.html" data-i18n="navLogin">Login</a>
+          <a class="btn btn-primary" href="signup.html" data-i18n="navSignup">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="dashboard-shell">
+      <div class="container dashboard-layout medical-layout">
+        <aside class="sidebar medical-sidebar">
+          <nav class="sidebar-nav" aria-label="Medical history sections">
+            <a href="#medical-history" data-i18n="Previous Diabetes History">Previous Diabetes History <span>→</span></a>
+            <a href="#treatment" data-i18n="Previous Treatment">Previous Treatment <span>→</span></a>
+            <a href="#medications" data-i18n="Medication History">Medication History <span>→</span></a>
+            <a href="#reports" data-i18n="Upload Medical Reports">Upload Medical Reports <span>→</span></a>
+            <a href="#readings" data-i18n="Blood Glucose Tracker">Blood Glucose Tracker <span>→</span></a>
+            <a href="#comparison" data-i18n="Before & After Comparison">Before & After Comparison <span>→</span></a>
+            <a href="#timeline" data-i18n="Medical History Timeline">Medical History Timeline <span>→</span></a>
+            <a href="#assistant" data-i18n="AI Report Explanation">AI Report Explanation <span>→</span></a>
+          </nav>
+        </aside>
+
+        <div class="main-panel medical-main">
+          <header class="medical-heading">
+            <h1 data-i18n="Medical History">Medical History</h1>
+            <p data-i18n="Keep your diagnosis, care, reports, and readings together.">Keep your diagnosis, care, reports, and readings together.</p>
+            <p class="medical-privacy-note" data-i18n="Your records stay private to your account. Report text extraction and explanations run locally on this device.">Your records stay private to your account. Report text extraction and explanations run locally on this device.</p>
+          </header>
+
+          <section id="medical-history" class="panel-card medical-section">
+            <h2 data-i18n="Previous Diabetes History">Previous Diabetes History</h2>
+            <form id="medicalHistoryForm" class="form-grid">
+              <div class="field">
+                <label for="hasPreviousDiabetes" data-i18n="Have you previously been diagnosed with diabetes?">Have you previously been diagnosed with diabetes?</label>
+                <select id="hasPreviousDiabetes" name="hasPreviousDiabetes" required>
+                  <option value="" data-i18n="Choose a category">Choose a category</option>
+                  <option value="yes" data-i18n="Yes">Yes</option>
+                  <option value="no" data-i18n="No">No</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="hasPreviousTreatment" data-i18n="Have you previously received treatment?">Have you previously received treatment?</label>
+                <select id="hasPreviousTreatment" name="hasPreviousTreatment" required>
+                  <option value="" data-i18n="Choose a category">Choose a category</option>
+                  <option value="yes" data-i18n="Yes">Yes</option>
+                  <option value="no" data-i18n="No">No</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="diagnosisDate" data-i18n="Diagnosis date">Diagnosis date</label>
+                <input id="diagnosisDate" name="diagnosisDate" type="date" />
+              </div>
+              <div class="field">
+                <label for="yearsWithDiabetes" data-i18n="Years with diabetes">Years with diabetes</label>
+                <input id="yearsWithDiabetes" name="yearsWithDiabetes" type="number" min="0" max="120" step="0.1" />
+              </div>
+              <div class="field">
+                <label for="diabetesCategory" data-i18n="Diabetes category">Diabetes category</label>
+                <select id="diabetesCategory" name="diabetesCategory">
+                  <option value="" data-i18n="Choose a category">Choose a category</option>
+                  <option value="Type 1" data-i18n="Type 1">Type 1</option>
+                  <option value="Type 2" data-i18n="Type 2">Type 2</option>
+                  <option value="Prediabetes" data-i18n="Prediabetes">Prediabetes</option>
+                  <option value="Gestational Diabetes" data-i18n="Gestational Diabetes">Gestational Diabetes</option>
+                  <option value="Other" data-i18n="Other">Other</option>
+                </select>
+              </div>
+              <div class="field medical-span-two">
+                <label for="complications" data-i18n="Previous complications">Previous complications</label>
+                <textarea id="complications" name="complications" rows="3" maxlength="4000" data-i18n-placeholder="Describe any previous diabetes-related complications" placeholder="Describe any previous diabetes-related complications"></textarea>
+              </div>
+              <div class="medical-form-actions medical-span-two">
+                <button class="btn btn-primary" type="submit" data-i18n="Save history">Save history</button>
+                <p class="medical-status" id="historyStatus" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+          </section>
+
+          <section id="treatment" class="panel-card medical-section">
+            <h2 data-i18n="Previous Treatment">Previous Treatment</h2>
+            <p data-i18n="Add a treatment or care provider">Add a treatment or care provider</p>
+            <form id="treatmentForm" class="form-grid">
+              <input name="recordId" type="hidden" />
+              <div class="field medical-span-two">
+                <label for="treatmentDetails" data-i18n="Treatment details">Treatment details</label>
+                <textarea id="treatmentDetails" name="details" rows="2" maxlength="2000" required></textarea>
+              </div>
+              <div class="field">
+                <label for="treatmentProvider" data-i18n="Hospital or doctor (optional)">Hospital or doctor (optional)</label>
+                <input id="treatmentProvider" name="provider" maxlength="300" />
+              </div>
+              <div class="field">
+                <label for="treatmentStart" data-i18n="Treatment start date">Treatment start date</label>
+                <input id="treatmentStart" name="startedOn" type="date" />
+              </div>
+              <div class="field">
+                <label for="treatmentEnd" data-i18n="Treatment end date">Treatment end date</label>
+                <input id="treatmentEnd" name="endedOn" type="date" />
+              </div>
+              <div class="medical-form-actions medical-span-two">
+                <button class="btn btn-primary" type="submit" data-i18n="Save treatment">Save treatment</button>
+                <button class="btn btn-outline" type="button" data-cancel-treatment hidden data-i18n="Cancel edit">Cancel edit</button>
+                <p class="medical-status" id="treatmentStatus" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+            <div id="treatmentList" class="medical-record-list" aria-live="polite"></div>
+          </section>
+
+          <section id="medications" class="panel-card medical-section">
+            <h2 data-i18n="Medication History">Medication History</h2>
+            <form id="medicationForm" class="form-grid">
+              <input name="recordId" type="hidden" />
+              <div class="field">
+                <label for="medicineName" data-i18n="Medicine name">Medicine name</label>
+                <input id="medicineName" name="name" maxlength="200" required />
+              </div>
+              <div class="field">
+                <label for="medicineDosage" data-i18n="Dosage">Dosage</label>
+                <input id="medicineDosage" name="dosage" maxlength="200" />
+              </div>
+              <div class="field">
+                <label for="medicineFrequency" data-i18n="Frequency">Frequency</label>
+                <input id="medicineFrequency" name="frequency" maxlength="200" />
+              </div>
+              <div class="field">
+                <label for="medicineStart" data-i18n="Treatment starting date">Treatment starting date</label>
+                <input id="medicineStart" name="startedOn" type="date" />
+              </div>
+              <div class="field">
+                <label for="medicineDuration" data-i18n="Treatment duration">Treatment duration</label>
+                <input id="medicineDuration" name="duration" maxlength="200" />
+              </div>
+              <div class="field">
+                <label for="medicineCurrent" data-i18n="Are you currently taking this medicine?">Are you currently taking this medicine?</label>
+                <select id="medicineCurrent" name="isCurrent" required>
+                  <option value="yes" data-i18n="Currently taking">Currently taking</option>
+                  <option value="no" data-i18n="Discontinued">Discontinued</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="medicineStopped" data-i18n="Discontinued date">Discontinued date</label>
+                <input id="medicineStopped" name="discontinuedOn" type="date" />
+              </div>
+              <div class="field">
+                <label for="medicineReason" data-i18n="Why was it discontinued?">Why was it discontinued?</label>
+                <input id="medicineReason" name="discontinuationReason" maxlength="2000" />
+              </div>
+              <div class="medical-form-actions medical-span-two">
+                <button class="btn btn-primary" type="submit" data-i18n="Save medication">Save medication</button>
+                <button class="btn btn-outline" type="button" data-cancel-medication hidden data-i18n="Cancel edit">Cancel edit</button>
+                <p class="medical-status" id="medicationStatus" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+            <div id="medicationList" class="medical-record-list" aria-live="polite"></div>
+          </section>
+
+          <section id="reports" class="panel-card medical-section">
+            <h2 data-i18n="Upload Medical Reports">Upload Medical Reports</h2>
+            <p data-i18n="Allow private report storage and local text extraction. You can change this choice at any time.">Allow private report storage and local text extraction. You can change this choice at any time.</p>
+            <label class="checkbox medical-consent">
+              <input id="reportConsent" type="checkbox" />
+              <span data-i18n="Allow private report processing">Allow private report processing</span>
+            </label>
+            <form id="reportForm" class="form-grid">
+              <div class="field">
+                <label for="reportCategory" data-i18n="Category">Category</label>
+                <select id="reportCategory" name="category" required>
+                  <option value="before_treatment" data-i18n="Before Treatment / Previous Reports">Before Treatment / Previous Reports</option>
+                  <option value="after_treatment" data-i18n="After Treatment / Latest Reports">After Treatment / Latest Reports</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="reportName" data-i18n="Report name">Report name</label>
+                <input id="reportName" name="reportName" maxlength="180" />
+              </div>
+              <div class="field">
+                <label for="reportDate" data-i18n="Report date">Report date</label>
+                <input id="reportDate" name="testDate" type="date" />
+              </div>
+              <div class="field">
+                <label for="reportFacility" data-i18n="Hospital or laboratory">Hospital or laboratory</label>
+                <input id="reportFacility" name="facilityName" maxlength="300" />
+              </div>
+              <div class="field medical-span-two">
+                <label for="reportFile" data-i18n="Choose a PDF, JPG, JPEG, or PNG file (10 MB max)">Choose a PDF, JPG, JPEG, or PNG file (10 MB max)</label>
+                <input id="reportFile" name="report" type="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" required />
+              </div>
+              <div class="medical-form-actions medical-span-two">
+                <button class="btn btn-primary" type="submit" data-i18n="Upload and extract text locally">Upload and extract text locally</button>
+                <p class="medical-status" id="reportStatus" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+            <div id="reportVerification" class="report-verification" hidden></div>
+            <h3 data-i18n="Uploaded reports">Uploaded reports</h3>
+            <div id="reportList" class="medical-record-list" aria-live="polite"></div>
+            <div class="medical-compare-controls">
+              <h3 data-i18n="Compare reports">Compare reports</h3>
+              <div class="medical-compare-selects">
+                <label class="field"><span data-i18n="Earlier report">Earlier report</span><select id="compareReportA"></select></label>
+                <label class="field"><span data-i18n="Later report">Later report</span><select id="compareReportB"></select></label>
+                <button id="compareReportsButton" class="btn btn-outline" type="button" data-i18n="Compare selected reports">Compare selected reports</button>
+              </div>
+              <div id="selectedReportComparison" class="selected-report-comparison" aria-live="polite"></div>
+            </div>
+          </section>
+
+          <section id="readings" class="panel-card medical-section">
+            <h2 data-i18n="Blood Glucose Tracker">Blood Glucose Tracker</h2>
+            <p data-i18n="Record a reading exactly as shown. Report test dates are separate from upload dates.">Record a reading exactly as shown. Report test dates are separate from upload dates.</p>
+            <form id="readingForm" class="form-grid">
+              <div class="field">
+                <label for="readingType" data-i18n="Measurement type">Measurement type</label>
+                <select id="readingType" name="type" required>
+                  <option value="fasting" data-i18n="Fasting blood glucose">Fasting blood glucose</option>
+                  <option value="postprandial" data-i18n="Postprandial blood glucose (PP)">Postprandial blood glucose (PP)</option>
+                  <option value="random" data-i18n="Random blood glucose">Random blood glucose</option>
+                  <option value="hba1c" data-i18n="HbA1c">HbA1c</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="readingValue" data-i18n="Measurement value">Measurement value</label>
+                <input id="readingValue" name="value" type="number" min="1" max="2000" step="0.1" required />
+              </div>
+              <div class="field medical-span-two">
+                <label for="readingTime" data-i18n="Measurement date and time">Measurement date and time</label>
+                <input id="readingTime" name="measuredAt" type="datetime-local" required />
+              </div>
+              <div class="medical-form-actions medical-span-two">
+                <button class="btn btn-primary" type="submit" data-i18n="Add reading">Add reading</button>
+                <button class="btn btn-outline" type="button" data-cancel-reading hidden data-i18n="Cancel edit">Cancel edit</button>
+                <p class="medical-status" id="readingStatus" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+            <div id="readingList" class="medical-record-list" aria-live="polite"></div>
+          </section>
+
+          <section id="comparison" class="panel-card medical-section">
+            <h2 data-i18n="Before & After Comparison">Before & After Comparison</h2>
+            <p data-i18n="A change in a number is not, by itself, a clinical improvement or concern.">A change in a number is not, by itself, a clinical improvement or concern.</p>
+            <div id="readingComparison" class="comparison-grid"></div>
+            <div class="comparison-chart-wrap">
+              <h3 data-i18n="Recorded change over time">Recorded change over time</h3>
+              <div id="readingChart" class="medical-chart" role="img" aria-label="Recorded glucose measurements over time"></div>
+            </div>
+            <div class="treatment-comparison">
+              <h3 data-i18n="Previous treatment vs current treatment">Previous treatment vs current treatment</h3>
+              <div id="treatmentComparison" class="treatment-comparison-content"></div>
+            </div>
+          </section>
+
+          <section id="timeline" class="panel-card medical-section">
+            <h2 data-i18n="Medical History Timeline">Medical History Timeline</h2>
+            <div id="medicalTimeline" class="medical-timeline" aria-live="polite"></div>
+          </section>
+
+          <section id="assistant" class="panel-card medical-section">
+            <h2 data-i18n="AI Report Explanation">AI Report Explanation</h2>
+            <p data-i18n="Ask about confirmed report results. Explanations use your verified values and the local Ollama model only.">Ask about confirmed report results. Explanations use your verified values and the local Ollama model only.</p>
+            <form id="medicalAssistantForm">
+              <div class="field">
+                <label for="medicalQuestion" data-i18n="Ask a question about your report">Ask a question about your report</label>
+                <textarea id="medicalQuestion" name="question" rows="3" maxlength="1000" data-i18n-placeholder="Explain my confirmed results in simple language" placeholder="Explain my confirmed results in simple language"></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit" data-i18n="Explain with local AI">Explain with local AI</button>
+            </form>
+            <p id="medicalAssistantStatus" class="medical-status" role="status" aria-live="polite"></p>
+            <div id="medicalAssistantAnswer" class="medical-assistant-answer" aria-live="polite"></div>
+            <p class="medical-safety-note" data-i18n="This assistant does not diagnose or prescribe. Discuss results and treatment decisions with a qualified healthcare professional.">This assistant does not diagnose or prescribe. Discuss results and treatment decisions with a qualified healthcare professional.</p>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div><strong>HealthSync</strong></div>
+        <p>© <span id="year"></span> HealthSync</p>
+      </div>
+    </footer>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

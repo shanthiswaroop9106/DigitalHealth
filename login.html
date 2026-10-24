@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | HealthSync</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">H</span>
+          <span data-i18n="brand">HealthSync</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+
+        <nav class="main-nav">
+          <a href="index.html" data-i18n="navHome">Home</a>
+          <a href="dashboard.html" data-i18n="navDashboard">Dashboard</a>
+          <a href="diet.html" data-i18n="navDiet">Diet</a>
+          <a href="activities.html" data-i18n="navActivities">Activities</a>
+          <a href="progress.html" data-i18n="navProgress">Progress</a>
+          <a href="ai.html" data-i18n="navAssistant">AI Assistant</a>
+          <a href="profile.html" data-i18n="navProfile">Profile</a>
+        </nav>
+
+        <div class="nav-actions">
+          <label class="language-picker">
+            <span>🌐</span>
+            <select data-language aria-label="Select language">
+              <option value="en">English</option>
+              <option value="te">తెలుగు</option>
+              <option value="hi">हिन्दी</option>
+            </select>
+          </label>
+          <a class="btn btn-outline" href="login.html" data-i18n="navLogin">Login</a>
+          <a class="btn btn-primary" href="signup.html" data-i18n="navSignup">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="auth-shell">
+      <div class="auth-layout">
+        <div class="auth-visual">
+          <div class="visual-box">
+            <span class="kicker">Daily wellness</span>
+            <h2 style="margin-top: 18px;">Track care with confidence.</h2>
+            <div class="metrics-board">
+              <div class="metric-tile">
+                <div class="label">Meals logged</div>
+                <strong>18</strong>
+                <small>this week</small>
+              </div>
+              <div class="metric-tile">
+                <div class="label">Activity</div>
+                <strong>6.4k</strong>
+                <small>steps/day</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-card">
+          <div class="auth-top">
+            <span class="kicker">Welcome</span>
+            <h2 style="margin-top: 18px;" data-i18n="loginTitle">Welcome back</h2>
+            <p>Continue with your health progress and daily support plan.</p>
+          </div>
+
+          <form id="loginForm">
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="name@example.com" />
+            </div>
+
+            <div class="field">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" placeholder="Enter your password" />
+            </div>
+
+            <div class="form-row">
+              <label class="checkbox">
+                <input type="checkbox" />
+                <span>Remember me</span>
+              </label>
+              <a class="muted-link" href="signup.html">Forgot password?</a>
+            </div>
+
+            <button class="btn btn-primary" type="submit" style="width: 100%;">Log in</button>
+            <div class="form-status"></div>
+          </form>
+
+          <div class="social-login">
+            <button class="social-btn" type="button">Google</button>
+            <button class="social-btn" type="button">Apple</button>
+          </div>
+
+          <p style="text-align: center; margin-top: 22px;">
+            New here?
+            <a class="muted-link" href="signup.html">Create account</a>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div><strong>HealthSync</strong></div>
+        <p>© <span id="year"></span> HealthSync</p>
+      </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

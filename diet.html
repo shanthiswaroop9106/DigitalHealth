@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diet | HealthSync</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">H</span>
+          <span data-i18n="brand">HealthSync</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+
+        <nav class="main-nav">
+          <a href="index.html" data-i18n="navHome">Home</a>
+          <a href="dashboard.html" data-i18n="navDashboard">Dashboard</a>
+          <a class="active" href="diet.html" data-i18n="navDiet">Diet</a>
+          <a href="activities.html" data-i18n="navActivities">Activities</a>
+          <a href="progress.html" data-i18n="navProgress">Progress</a>
+          <a href="ai.html" data-i18n="navAssistant">AI Assistant</a>
+          <a href="profile.html" data-i18n="navProfile">Profile</a>
+        </nav>
+
+        <div class="nav-actions">
+          <label class="language-picker">
+            <span>🌐</span>
+            <select data-language aria-label="Select language">
+              <option value="en">English</option>
+              <option value="te">తెలుగు</option>
+              <option value="hi">हिन्दी</option>
+            </select>
+          </label>
+          <a class="btn btn-outline" href="login.html" data-i18n="navLogin">Login</a>
+          <a class="btn btn-primary" href="signup.html" data-i18n="navSignup">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Nutrition</span>
+          <h2>Personalized diet plan</h2>
+        </div>
+
+        <div class="diet-progress-card">
+          <div class="diet-progress-header">
+            <div>
+              <span class="kicker">Today's tracking</span>
+              <h3>Diet completion</h3>
+            </div>
+            <div class="diet-progress-summary">
+              <strong id="dietCompletionValue">0%</strong>
+              <span id="dietCompletionText">0 of 4 meals complete</span>
+            </div>
+          </div>
+          <div class="progress-track" aria-label="Daily diet progress">
+            <div id="dietProgressBar" class="progress-fill"></div>
+          </div>
+          <div id="dietHistory" class="diet-history"></div>
+        </div>
+
+        <div class="meal-grid">
+          <article class="meal-card diet-check-card">
+            <div class="meal-meta">
+              <h3>Breakfast</h3>
+              <span class="pill">High fiber</span>
+            </div>
+            <p data-i18n="Suggested time: 7:00–8:30 AM">Suggested time: 7:00–8:30 AM</p>
+            <ul class="list">
+              <li><div><strong>Oatmeal</strong><small>with chia seeds and berries</small></div><span>320 kcal</span></li>
+              <li><div><strong>Greek yogurt</strong><small>unsweetened</small></div><span>130 kcal</span></li>
+              <li><div><strong>Herbal tea</strong><small>low sugar</small></div><span>0 kcal</span></li>
+            </ul>
+            <p data-i18n="Alternative choices: lentils, tofu, or eggs.">Alternative choices: lentils, tofu, or eggs.</p>
+            <label class="meal-check">
+              <input type="checkbox" data-meal="Breakfast" />
+              <span>Mark breakfast complete</span>
+            </label>
+          </article>
+
+          <article class="meal-card diet-check-card">
+            <div class="meal-meta">
+              <h3>Lunch</h3>
+              <span class="pill">Balanced</span>
+            </div>
+            <p data-i18n="Suggested time: 12:00–1:30 PM">Suggested time: 12:00–1:30 PM</p>
+            <ul class="list">
+              <li><div><strong>Grilled chicken</strong><small>lean protein</small></div><span>420 kcal</span></li>
+              <li><div><strong>Brown rice</strong><small>small portion</small></div><span>210 kcal</span></li>
+              <li><div><strong>Mixed greens</strong><small>olive oil dressing</small></div><span>140 kcal</span></li>
+            </ul>
+            <p data-i18n="Alternative choices: quinoa, barley, or cauliflower rice.">Alternative choices: quinoa, barley, or cauliflower rice.</p>
+            <label class="meal-check">
+              <input type="checkbox" data-meal="Lunch" />
+              <span>Mark lunch complete</span>
+            </label>
+          </article>
+
+          <article class="meal-card diet-check-card">
+            <div class="meal-meta">
+              <h3>Snacks</h3>
+              <span class="pill">Smart pick</span>
+            </div>
+            <p data-i18n="Suggested time: 3:00–4:00 PM">Suggested time: 3:00–4:00 PM</p>
+            <ul class="list">
+              <li><div><strong>Apple slices</strong><small>with peanut butter</small></div><span>190 kcal</span></li>
+              <li><div><strong>Trail mix</strong><small>portion controlled</small></div><span>160 kcal</span></li>
+              <li><div><strong>Herbal water</strong><small>hydration support</small></div><span>0 kcal</span></li>
+            </ul>
+            <p data-i18n="Alternative choices: nuts, roasted chickpeas, or plain yogurt.">Alternative choices: nuts, roasted chickpeas, or plain yogurt.</p>
+            <label class="meal-check">
+              <input type="checkbox" data-meal="Snacks" />
+              <span>Mark snacks complete</span>
+            </label>
+          </article>
+
+          <article class="meal-card diet-check-card">
+            <div class="meal-meta">
+              <h3>Dinner</h3>
+              <span class="pill">Smart carbs</span>
+            </div>
+            <p data-i18n="Suggested time: 6:30–8:00 PM">Suggested time: 6:30–8:00 PM</p>
+            <ul class="list">
+              <li><div><strong>Salmon</strong><small>omega-3 rich</small></div><span>390 kcal</span></li>
+              <li><div><strong>Quinoa</strong><small>whole grain</small></div><span>220 kcal</span></li>
+              <li><div><strong>Roasted vegetables</strong><small>low GI</small></div><span>150 kcal</span></li>
+            </ul>
+            <p data-i18n="Alternative choices: tofu, beans, or grilled vegetables.">Alternative choices: tofu, beans, or grilled vegetables.</p>
+            <label class="meal-check">
+              <input type="checkbox" data-meal="Dinner" />
+              <span>Mark dinner complete</span>
+            </label>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div><strong>HealthSync</strong></div>
+        <p>© <span id="year"></span> HealthSync</p>
+      </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

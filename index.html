@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HealthSync | Personalized Diabetes Health Assistant</title>
+    <meta
+      name="description"
+      content="HealthSync is a personalized diabetes health assistant for daily care, nutrition, activity tracking, and wellness insights."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">H</span>
+          <span data-i18n="brand">HealthSync</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+
+        <nav class="main-nav">
+          <a class="active" href="index.html" data-i18n="navHome">Home</a>
+          <a href="dashboard.html" data-i18n="navDashboard">Dashboard</a>
+          <a href="diet.html" data-i18n="navDiet">Diet</a>
+          <a href="activities.html" data-i18n="navActivities">Activities</a>
+          <a href="progress.html" data-i18n="navProgress">Progress</a>
+          <a href="ai.html" data-i18n="navAssistant">AI Assistant</a>
+          <a href="profile.html" data-i18n="navProfile">Profile</a>
+        </nav>
+
+        <div class="nav-actions">
+          <label class="language-picker">
+            <span>🌐</span>
+            <select data-language aria-label="Select language">
+              <option value="en">English</option>
+              <option value="te">తెలుగు</option>
+              <option value="hi">हिन्दी</option>
+            </select>
+          </label>
+          <a class="btn btn-outline" href="login.html" data-i18n="navLogin">Login</a>
+          <a class="btn btn-primary" href="signup.html" data-i18n="navSignup">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="kicker">Diabetes care made simple</span>
+            <h1 data-i18n="heroTitle">Personalized diabetes care that fits your daily life.</h1>
+            <p data-i18n="heroText">
+              Track meals, activity, progress, and wellness insights in one compassionate digital companion.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="signup.html" data-i18n="heroPrimary">Get started</a>
+              <a class="btn btn-ghost" href="dashboard.html" data-i18n="heroSecondary">See dashboard</a>
+            </div>
+
+            <div class="hero-points">
+              <span><i class="dot"></i> <span data-i18n="heroPoint1">Daily guidance</span></span>
+              <span><i class="dot"></i> <span data-i18n="heroPoint2">Better habits</span></span>
+              <span><i class="dot"></i> <span data-i18n="heroPoint3">Smarter health</span></span>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="visual-card">
+              <div class="panel-header">
+                <div>
+                  <p class="kicker" style="margin-bottom: 10px;">Today</p>
+                  <h3>Health overview</h3>
+                </div>
+                <span class="badge success">Stable</span>
+              </div>
+
+              <div class="metrics-board">
+                <div class="metric-tile">
+                  <div class="label">Blood sugar</div>
+                  <strong>118</strong>
+                  <small>mg/dL</small>
+                </div>
+                <div class="metric-tile">
+                  <div class="label">BMI</div>
+                  <strong>24.6</strong>
+                  <small>Healthy</small>
+                </div>
+                <div class="metric-tile">
+                  <div class="label">Steps</div>
+                  <strong>7.8k</strong>
+                  <small>Goal 10k</small>
+                </div>
+                <div class="metric-tile">
+                  <div class="label">Hydration</div>
+                  <strong>2.1L</strong>
+                  <small>On track</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker" data-i18n="sectionFeature">Why people choose HealthSync</span>
+            <h2>Designed to support real, everyday diabetes care.</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-icon">🥗</div>
+              <h3>Personalized diet</h3>
+              <p>Balanced meal plans and nutrition tracking created around your health goals and routines.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">🏃</div>
+              <h3>Activity guidance</h3>
+              <p>Daily movement plans with healthy pacing to help you stay active without overdoing it.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">📈</div>
+              <h3>Progress tracking</h3>
+              <p>See trends, milestone improvements, and health indicators over time to stay motivated.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 0;">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker" data-i18n="sectionBenefit">Built around your health goals</span>
+            <h2>Everything you need in one small, supportive system.</h2>
+          </div>
+
+          <div class="benefits-grid">
+            <div class="info-card">
+              <h3>Smart routine builder</h3>
+              <p>Plan meals, exercise, hydration, and reminders around your personal wellness rhythm.</p>
+            </div>
+            <div class="info-card">
+              <h3>Health summary</h3>
+              <p>Review blood sugar patterns, nutrition quality, movement, and lifestyle habits at a glance.</p>
+            </div>
+            <div class="info-card">
+              <h3>AI support</h3>
+              <p>Get a friendly assistant that helps explain your daily health trends and next steps.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 0;">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker" data-i18n="sectionSummary">Your health snapshots</span>
+            <h2>Stay informed, supported, and consistent.</h2>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-item info-card">
+              <div class="feature-icon">📉</div>
+              <span class="label">Average blood sugar</span>
+              <strong>113 mg/dL</strong>
+              <small>Down 9% this month</small>
+            </div>
+            <div class="stat-item info-card">
+              <div class="feature-icon">💧</div>
+              <span class="label">Hydration score</span>
+              <strong>87%</strong>
+              <small>Strong daily routine</small>
+            </div>
+            <div class="stat-item info-card">
+              <div class="feature-icon">✅</div>
+              <span class="label">Goal completion</span>
+              <strong>82%</strong>
+              <small>2 goals ahead</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 0;">
+        <div class="container">
+          <div class="cta-box">
+            <div>
+              <h3 data-i18n="ctaTitle">Ready to build healthier habits with confidence?</h3>
+              <p>HealthSync helps you stay grounded, informed, and consistent with your diabetes care plan.</p>
+            </div>
+            <a class="btn btn-primary" href="signup.html" data-i18n="ctaButton">Create account</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>HealthSync</strong>
+        </div>
+        <p>© <span id="year"></span> HealthSync. Built for healthier living.</p>
+      </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

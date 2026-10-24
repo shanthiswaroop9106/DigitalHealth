@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | HealthSync</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">H</span>
+          <span data-i18n="brand">HealthSync</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+
+        <nav class="main-nav">
+          <a href="index.html" data-i18n="navHome">Home</a>
+          <a href="dashboard.html" data-i18n="navDashboard">Dashboard</a>
+          <a href="diet.html" data-i18n="navDiet">Diet</a>
+          <a href="activities.html" data-i18n="navActivities">Activities</a>
+          <a href="progress.html" data-i18n="navProgress">Progress</a>
+          <a href="ai.html" data-i18n="navAssistant">AI Assistant</a>
+          <a href="profile.html" data-i18n="navProfile">Profile</a>
+        </nav>
+
+        <div class="nav-actions">
+          <label class="language-picker">
+            <span>🌐</span>
+            <select data-language aria-label="Select language">
+              <option value="en">English</option>
+              <option value="te">తెలుగు</option>
+              <option value="hi">हिन्दी</option>
+            </select>
+          </label>
+          <a class="btn btn-outline" href="login.html" data-i18n="navLogin">Login</a>
+          <a class="btn btn-primary" href="signup.html" data-i18n="navSignup">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="auth-shell">
+      <div class="auth-layout">
+        <div class="auth-visual">
+          <div class="visual-box">
+            <span class="kicker">Join us</span>
+            <h2 style="margin-top: 18px;">Build steady health habits.</h2>
+            <div class="metrics-board">
+              <div class="metric-tile">
+                <div class="label">Care plan</div>
+                <strong>Daily</strong>
+                <small>personalized</small>
+              </div>
+              <div class="metric-tile">
+                <div class="label">Goal status</div>
+                <strong>82%</strong>
+                <small>next milestone</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-card">
+          <div class="auth-top">
+            <span class="kicker">New account</span>
+            <h2 style="margin-top: 18px;" data-i18n="signupTitle">Create your account</h2>
+            <p>Join a smarter care experience designed around your lifestyle and goals.</p>
+          </div>
+
+          <form id="signupForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="first-name">First Name</label>
+                <input id="first-name" name="firstName" type="text" placeholder="Your first name" required autocomplete="given-name" />
+              </div>
+
+              <div class="field">
+                <label for="last-name">Last Name</label>
+                <input id="last-name" name="lastName" type="text" placeholder="Your last name" autocomplete="family-name" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="signup-email">Email</label>
+              <input id="signup-email" name="email" type="email" placeholder="name@example.com" required autocomplete="email" />
+            </div>
+
+            <div class="field">
+              <label for="signup-password">Password</label>
+              <input id="signup-password" name="password" type="password" placeholder="Create a strong password" required minlength="8" autocomplete="new-password" />
+            </div>
+
+            <div class="field">
+              <label for="goal">Primary goal</label>
+              <select id="goal" name="goal">
+                <option value="Stable blood sugar">Stable blood sugar</option>
+                <option value="Weight management">Weight management</option>
+                <option value="Healthy eating">Healthy eating</option>
+                <option value="Daily activity">Daily activity</option>
+              </select>
+            </div>
+
+            <label class="checkbox">
+              <input type="checkbox" />
+              <span>I agree to terms and health guidance policies.</span>
+            </label>
+
+            <button class="btn btn-primary" type="submit" style="width: 100%; margin-top: 20px;">Create account</button>
+            <div class="form-status"></div>
+          </form>
+
+          <p style="text-align: center; margin-top: 24px;">
+            Already have an account?
+            <a class="muted-link" href="login.html">Log in</a>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div><strong>HealthSync</strong></div>
+        <p>© <span id="year"></span> HealthSync</p>
+      </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

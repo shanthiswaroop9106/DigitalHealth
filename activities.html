@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activities | HealthSync</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">H</span>
+          <span data-i18n="brand">HealthSync</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+
+        <nav class="main-nav">
+          <a href="index.html" data-i18n="navHome">Home</a>
+          <a href="dashboard.html" data-i18n="navDashboard">Dashboard</a>
+          <a href="diet.html" data-i18n="navDiet">Diet</a>
+          <a class="active" href="activities.html" data-i18n="navActivities">Activities</a>
+          <a href="progress.html" data-i18n="navProgress">Progress</a>
+          <a href="ai.html" data-i18n="navAssistant">AI Assistant</a>
+          <a href="profile.html" data-i18n="navProfile">Profile</a>
+        </nav>
+
+        <div class="nav-actions">
+          <label class="language-picker">
+            <span>🌐</span>
+            <select data-language aria-label="Select language">
+              <option value="en">English</option>
+              <option value="te">తెలుగు</option>
+              <option value="hi">हिन्दी</option>
+            </select>
+          </label>
+          <a class="btn btn-outline" href="login.html" data-i18n="navLogin">Login</a>
+          <a class="btn btn-primary" href="signup.html" data-i18n="navSignup">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Movement</span>
+          <h2>Today’s activity plan</h2>
+        </div>
+
+        <div class="diet-progress-card activity-progress-card">
+          <div class="diet-progress-header">
+            <div>
+              <span class="kicker">Today's tracking</span>
+              <h3>Activity completion</h3>
+            </div>
+            <div class="diet-progress-summary">
+              <strong id="activityCompletionValue">0%</strong>
+              <span id="activityCompletionText">0 of 3 activities complete</span>
+            </div>
+          </div>
+          <div class="progress-track" aria-label="Daily activity progress">
+            <div id="activityProgressBar" class="progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="activity-grid">
+          <article class="activity-card">
+            <div class="activity-meta">
+              <h3>Morning walk</h3>
+              <span class="pill">30 min</span>
+            </div>
+            <p>Gentle outdoor walk with steady pacing to improve circulation and energy.</p>
+            <label class="meal-check">
+              <input type="checkbox" data-activity="Morning walk" />
+              <span>Mark activity complete</span>
+            </label>
+          </article>
+
+          <article class="activity-card">
+            <div class="activity-meta">
+              <h3>Stretch and mobility</h3>
+              <span class="pill">15 min</span>
+            </div>
+            <p>Short routine for lower back, hips, shoulders, and posture support.</p>
+            <label class="meal-check">
+              <input type="checkbox" data-activity="Stretch and mobility" />
+              <span>Mark activity complete</span>
+            </label>
+          </article>
+
+          <article class="activity-card">
+            <div class="activity-meta">
+              <h3>Strength work</h3>
+              <span class="pill">25 min</span>
+            </div>
+            <p>Bodyweight exercises to support balance, glucose control, and muscle strength.</p>
+            <label class="meal-check">
+              <input type="checkbox" data-activity="Strength work" />
+              <span>Mark activity complete</span>
+            </label>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div><strong>HealthSync</strong></div>
+        <p>© <span id="year"></span> HealthSync</p>
+      </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

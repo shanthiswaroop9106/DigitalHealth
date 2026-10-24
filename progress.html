@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress | HealthSync</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">H</span>
+          <span data-i18n="brand">HealthSync</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+
+        <nav class="main-nav">
+          <a href="index.html" data-i18n="navHome">Home</a>
+          <a href="dashboard.html" data-i18n="navDashboard">Dashboard</a>
+          <a href="diet.html" data-i18n="navDiet">Diet</a>
+          <a href="activities.html" data-i18n="navActivities">Activities</a>
+          <a class="active" href="progress.html" data-i18n="navProgress">Progress</a>
+          <a href="ai.html" data-i18n="navAssistant">AI Assistant</a>
+          <a href="profile.html" data-i18n="navProfile">Profile</a>
+        </nav>
+
+        <div class="nav-actions">
+          <label class="language-picker">
+            <span>🌐</span>
+            <select data-language aria-label="Select language">
+              <option value="en">English</option>
+              <option value="te">తెలుగు</option>
+              <option value="hi">हिन्दी</option>
+            </select>
+          </label>
+          <a class="btn btn-outline" href="login.html" data-i18n="navLogin">Login</a>
+          <a class="btn btn-primary" href="signup.html" data-i18n="navSignup">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Progress</span>
+          <h2>Your health journey overview</h2>
+        </div>
+
+        <div class="progress-grid">
+          <div class="progress-card panel-card">
+            <div class="panel-header">
+              <h3>Weekly trend</h3>
+              <span class="badge success">Improving</span>
+            </div>
+            <div class="chart-block" aria-label="weekly trend chart">
+              <div class="bar" style="height: 38%;"></div>
+              <div class="bar" style="height: 54%;"></div>
+              <div class="bar" style="height: 60%;"></div>
+              <div class="bar" style="height: 68%;"></div>
+              <div class="bar" style="height: 76%;"></div>
+              <div class="bar" style="height: 80%;"></div>
+              <div class="bar" style="height: 90%;"></div>
+            </div>
+          </div>
+
+          <div class="progress-card panel-card">
+            <div class="panel-header">
+              <h3>Daily progress</h3>
+              <span id="progressOverall" class="badge success">0%</span>
+            </div>
+
+            <div class="progress-track" style="margin-bottom: 18px;">
+              <div id="progressOverallBar" class="progress-fill" style="width: 0%;"></div>
+            </div>
+
+            <div>
+              <div class="progress-row"><strong data-i18n="Diet completion">Diet completion</strong><span id="progressDiet">0%</span></div>
+              <div class="progress-track"><div id="progressDietBar" class="progress-fill" style="width: 0%;"></div></div>
+            </div>
+
+            <div style="margin-top: 18px;">
+              <div class="progress-row"><strong data-i18n="Activity completion">Activity completion</strong><span id="progressActivity">0%</span></div>
+              <div class="progress-track"><div id="progressActivityBar" class="progress-fill" style="width: 0%;"></div></div>
+            </div>
+
+            <div style="margin-top: 18px;">
+              <div class="progress-row"><strong data-i18n="Health profile completion">Health profile completion</strong><span id="progressProfile">0%</span></div>
+              <div class="progress-track"><div id="progressProfileBar" class="progress-fill" style="width: 0%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div><strong>HealthSync</strong></div>
+        <p>© <span id="year"></span> HealthSync</p>
+      </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

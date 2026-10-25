@@ -1,0 +1,217 @@
+Act as a Senior Full-Stack Developer, Frontend Engineer, Backend Engineer, Database Engineer, and QA Automation Expert.
+I already have an existing project named HealthSync – Personalized Diabetes Health Assistant.
+Previous debugging attempts did not fix the following issues. This time, investigate the actual root causes and implement permanent fixes in the existing project.
+IMPORTANT:
+Do not create a new project.
+Do not replace the existing application.
+Do not remove existing features.
+Inspect the complete project before modifying anything.
+Fix the actual source code, not just the visible UI.
+Do not claim a feature works unless you have tested it.
+1. CRITICAL: Fix Incorrect Profile Name
+Current problem:
+Different users register and log in with their own names, but the profile and dashboard always display aisha.r.
+This is incorrect.
+Investigate:
+Signup form name handling.
+Login authentication.
+User ID and email mapping.
+User profile retrieval.
+Database records, if implemented.
+localStorage and sessionStorage.
+Hardcoded usernames.
+Default profile values.
+Dashboard profile rendering.
+JavaScript variables and API responses.
+Required fixes:
+Remove any hardcoded username such as aisha.r.
+Retrieve the actual authenticated user's details.
+Display the correct registered name everywhere.
+Make sure each account displays its own profile information.
+Ensure refreshing the browser does not change the name.
+Ensure logout and subsequent login load the correct account.
+Never use one user's cached information for another user.
+TEST CASE:
+Register/login using Account A with name Pragathi.
+Verify that Pragathi appears in the profile and dashboard.
+Logout.
+Login using Account B with a different name.
+Verify that Account B's actual name appears.
+Refresh the browser and verify again.
+Both accounts must show their own correct information.
+2. Fix Personal Details Edit Functionality
+Current problem:
+When users click the Edit button in Personal Details, nothing happens.
+Fix the complete edit functionality.
+Required behavior:
+Edit button must open an editable form or editing mode.
+Existing user information must appear in the input fields.
+Users must be able to edit their name, age, gender, email, diabetes category, and other existing editable profile fields.
+Save button must save the updated details.
+Cancel button must discard unsaved changes.
+Show a success message after saving.
+Show validation messages for invalid inputs.
+Updated details must immediately appear in the profile and dashboard.
+Updated details must remain after refreshing the browser.
+Ensure changes are saved against the currently authenticated user's account.
+Check event listeners, form submission, API endpoints, state management, and database update logic.
+Do not create a decorative Edit button. It must actually work.
+3. CRITICAL: Complete Application Language Translation
+Current problem:
+When users change the language in Settings, the application does not translate all its content.
+I want a complete multilingual application.
+When a user selects a language, the ENTIRE APPLICATION must immediately change to that language.
+This includes:
+Dashboard
+Welcome messages
+Dashboard headings
+Statistics
+Cards
+Labels
+Notifications
+Diet
+Diet recommendations
+Food names and descriptions
+Nutritional information
+Alternative food suggestions
+Meal timings
+Buttons and messages
+Activities
+Exercise names
+Walking recommendations
+Instructions
+Activity descriptions
+Completion messages
+Progress labels
+AI Chatbot
+Chatbot title and description
+Welcome message
+Quick action buttons
+Input placeholder
+Suggested questions
+Loading messages
+Error messages
+AI-generated responses
+Profile and Personal Details
+All headings
+Field labels
+Edit, Save, and Cancel buttons
+Validation messages
+Settings
+Language selection
+Theme settings
+Notifications
+All descriptions and labels
+Other application sections
+Login and Signup pages
+Navigation menus
+Buttons
+Modals
+Popups
+Alerts
+Tooltips
+Empty states
+Error messages
+Success messages
+Nothing should remain in the previous language except proper names, email addresses, and other content that should not be translated.
+Language implementation requirements
+Inspect the existing language selection implementation.
+Identify why changing the language does not update all pages.
+Implement a centralized translation system.
+Maintain separate translation dictionaries for every supported language.
+Replace hardcoded UI strings with translation keys.
+Ensure every page and component uses the same selected language.
+Update the interface immediately when the user changes language without requiring a logout or page refresh.
+Save the language preference separately for each user.
+Restore the selected language after login and browser refresh.
+Ensure dynamically generated content also uses the selected language.
+Do not leave untranslated English text in any supported application section.
+Add a fallback for missing translation keys, but identify and fix all missing translations before completion.
+Do not translate only headings. Translate all visible application text.
+4. Ollama AI Chatbot Language Integration
+My local AI model is:
+llama3.2:3b
+The chatbot must respect the language selected in Settings.
+For example:
+If the user selects English, the chatbot must respond in English.
+If the user selects Telugu, the chatbot must respond in Telugu.
+If the user selects Hindi, the chatbot must respond in Hindi.
+Apply the same behavior to every other supported language.
+Requirements:
+Pass the selected language explicitly in the AI prompt.
+Ensure the model generates responses in the selected language.
+Translate chatbot quick actions and predefined messages.
+Translate loading and error messages.
+Preserve conversation history.
+Make sure changing the language affects subsequent chatbot responses.
+Keep AI inference local through Ollama.
+Do not use hardcoded chatbot responses as a substitute for real AI responses.
+Test the chatbot using actual questions in at least two supported languages.
+5. User-Specific Settings and Data
+Make sure each user has independent:
+Profile details
+Language preference
+Diet completion records
+Activity completion records
+AI conversation history
+Personal health information
+Dashboard progress
+One user's changes must never affect another user's account.
+6. Complete Functional Testing
+Test all the following:
+Signup
+Login
+Logout
+Correct profile name
+Personal Details Edit
+Save and Cancel
+Profile data persistence
+Language switching
+Language persistence
+Complete translation across all pages
+Diet recommendations
+Alternative food suggestions
+Activity completion
+Progress percentage
+Chatbot responses
+Chat history
+Settings
+Check browser console errors, backend errors, API failures, and database update failures.
+7. Mandatory Language Testing
+Perform this exact test:
+Login using a test account.
+Open Settings.
+Change language from English to Telugu.
+Navigate through every application section.
+Verify that all visible UI text is in Telugu.
+Open the chatbot and ask a question.
+Verify that the actual Ollama model responds in Telugu.
+Change the language to Hindi.
+Repeat the test.
+Refresh the browser and verify that the selected language remains active.
+Do not consider language switching complete if only the Settings page or dashboard heading changes.
+8. Final Browser Testing
+After implementing the fixes:
+Start the required servers.
+Open the actual application in my default browser.
+Test with multiple user accounts.
+Verify the correct profile name.
+Edit and save personal details.
+Change languages and inspect every section.
+Test actual Ollama responses.
+Check console and terminal errors.
+If browser automation is available, use it to test the actual interactions. Otherwise, open the browser and guide me through any tests that require manual interaction.
+FINAL INSTRUCTIONS
+Do not stop after identifying problems.
+Implement the fixes in the existing project files.
+Do not give me only suggestions or code snippets.
+After completion, provide:
+Root cause of the incorrect username.
+How the Personal Details Edit issue was fixed.
+How complete language translation was implemented.
+Which languages are fully supported.
+Whether Ollama llama3.2:3b was successfully tested.
+All files modified.
+Tests passed and tests failed.
+Any remaining issues.
+Only mark a feature as completed after actual testing.
